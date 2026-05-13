@@ -37,11 +37,13 @@ export default function SignUp() {
     }
 
     // GUARDAR DATOS EXTRA
-    const { error: insertError } = await supabase.from("estudiantes").insert([
+    const { error: insertError } = await supabase.from("usuarios").insert([
       {
         nombre: formData.nombre,
         apellido: formData.apellido,
         email: formData.email,
+        cedula: formData.cedula,
+        rol: "estudiante",
       },
     ]);
 
